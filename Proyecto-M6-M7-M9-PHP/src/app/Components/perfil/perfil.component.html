@@ -40,19 +40,19 @@
         <table class="table table-borderless text-light">
           <tr>
             <th>Nombre:</th>
-            <td>Valenti</td>
+            <td>{{usuario.nick}}</td>
           </tr>
           <tr>
             <th>Apellidos:</th>
-            <td>Casas</td>
+            <td>{{perfil.apellido}}</td>
           </tr>
           <tr>
             <th>Email:</th>
-            <td>vcasas@ilerna.com</td>
+            <td>{{perfil.apellido}}</td>
           </tr>
           <tr>
             <th>Centro:</th>
-            <td>Ilerna</td>
+            <td>{{perfil.centro}}</td>
           </tr>
           <tr>
             <th>Contraseña:</th>
@@ -67,19 +67,19 @@
         <table class="table table-borderless text-light">
           <tr>
             <th>Nombre:</th>
-            <td>Alfonso</td>
+            <td>{{usuario.nick}}</td>
           </tr>
           <tr>
             <th>Apellidos:</th>
-            <td>Garcia</td>
+            <td>{{usuario.apellido}}</td>
           </tr>
           <tr>
             <th>Email:</th>
-            <td>agarcia@ilerna.com</td>
+            <td>{{usuario.correo}}</td>
           </tr>
           <tr>
             <th>Centro:</th>
-            <td>Ilerna</td>
+            <td>{{usuario.centro}}</td>
           </tr>
           <tr>
             <th>Contraseña:</th>
@@ -98,8 +98,8 @@
 
         <!-- Lista de ranking creados -->
         <div class="list-group rounded mr-3 ml-3">
-          <a *ngFor="let Alumno of Alumnos" class="list-group-item list-group-item-action text-center p-4 bg-light">
-            <strong>{{Alumno.nick}}</strong></a>
+          <a *ngFor="let Profesor of Profesor" class="list-group-item list-group-item-action text-center p-4 bg-light">
+            <strong>{{perfil.nick}}</strong></a>
         </div>
 
       </div>
@@ -108,8 +108,8 @@
 
         <!-- Lista de ranking creados -->
         <div class="list-group rounded mr-3 ml-3">
-          <a *ngFor="let Alumno of Alumnos" class="list-group-item list-group-item-action text-center p-4 bg-light">
-            <strong>{{Alumno.nick}}</strong></a>
+          <a *ngFor="let Professor of Profesores" class="list-group-item list-group-item-action text-center p-4 bg-light">
+            <strong>{{perfil.nick}}</strong></a>
         </div>
 
       </div>

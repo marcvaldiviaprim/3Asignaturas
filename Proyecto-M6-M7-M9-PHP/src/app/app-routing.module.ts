@@ -18,7 +18,7 @@ const routes: Routes = [
 { path: 'RGC', component: RankingGrupoComponent},
 { path: 'RSC', component: RankingSoloComponent},
 { path: 'MRC', component: ModificarRankingComponent},
-{ path: 'Perfil', component: PerfilComponent}];
+{ path: 'PER', component: PerfilComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

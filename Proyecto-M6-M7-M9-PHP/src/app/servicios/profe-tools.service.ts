@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Profesor } from '../Models/Profesor.model';
 import { Observable } from 'rxjs';
@@ -23,7 +23,7 @@ export class ProfeToolsService {
     }
 
     //token prueba
-    setToken(token: String) {
+    setToken(_token: String) {
       this.cookies.set("token", "token");
     }
 
@@ -55,6 +55,12 @@ export class ProfeToolsService {
   RegistroAlumno(alumno){
     return this.http.post(`${this.URL}RegistroAlumno.php`, JSON.stringify(alumno));
   }
+
+
+  GetProfesor(nick){
+    return this.http.get(`${this.URL}SelectProfesor.php?idUsuario=${nick}`)
+  }
+
 
 
 
