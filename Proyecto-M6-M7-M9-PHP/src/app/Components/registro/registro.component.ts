@@ -3,6 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProfeToolsService } from '../../servicios/profe-tools.service';
 import Swal from 'sweetalert2';
 import { Profesor } from 'src/app/Models/Profesor.model';
+import { Alumno } from 'src/app/Models/Alumno.model';
+
+
 
 @Component({
   selector: 'app-registro',
@@ -19,6 +22,8 @@ export class RegistroComponent implements OnInit {
   switch1 = false;
 
   user = new Profesor();
+  alumno = new Alumno();
+
 
   ngOnInit(): void {
 
@@ -73,8 +78,11 @@ export class RegistroComponent implements OnInit {
       confirmButtonColor: '#4a4a50',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Si, crear!'
+
     }).then((result) => {
       if (result.isConfirmed) {
+        this.BD.RegistroAlumno(this.alumno).subscribe();
+
 
         Swal.fire('¡Creado!', '', 'success')
       }
@@ -118,6 +126,7 @@ export class RegistroComponent implements OnInit {
           (error: any) => {
             console.log(error);
             Swal.fire('¡Error!', '', 'error')
+
           }
 
         );
@@ -130,7 +139,7 @@ export class RegistroComponent implements OnInit {
   }
 
   RegistroProfesor() {
-    this.BD.RegistroProfesor(this.user).subscribe (
+    // this.BD.RegistroProfesor(this.user).subscribe (
       datos => {
         if(datos['response'] == 'OK') {
           console.log(datos['response'])
@@ -140,6 +149,6 @@ export class RegistroComponent implements OnInit {
 
         }
       }
-    );
+    // );
     }
 }

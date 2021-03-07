@@ -49,8 +49,11 @@ export class ProfeToolsService {
   listarusuarios() {
     return this.http.get(`${this.URL}SelectPrueba.php`);
   }
-  RegistroProfesor(user){
-    return this.http.post(`${this.URL}RegistroProfesor.php`, JSON.stringify(user));
+  // RegistroProfesor(user){
+  //   return this.http.post(`${this.URL}RegistroProfesor.php`, JSON.stringify(user));
+  // }
+  RegistroAlumno(alumno){
+    return this.http.post(`${this.URL}RegistroAlumno.php`, JSON.stringify(alumno));
   }
 
 
